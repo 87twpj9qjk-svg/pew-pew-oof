@@ -13,7 +13,7 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #1E90FF, #FFD700); /* blue to yellow gradient */
+      background: linear-gradient(135deg, #1E90FF, #FFD700);
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -21,6 +21,42 @@
       text-align: center;
       min-height: 100vh;
       padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* FLAME BACKGROUND EFFECT (behind content) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 80%, rgba(255,100,0,0.25), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255,180,0,0.25), transparent 45%),
+        radial-gradient(circle at 50% 90%, rgba(255,60,0,0.25), transparent 50%);
+      animation: flames 6s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+
+    @keyframes flames {
+      0% {
+        transform: scale(1) translateY(0);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(1.05) translateY(-20px);
+        opacity: 0.9;
+      }
+    }
+
+    /* Subtle floating animation for content */
+    body > * {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
     }
 
     /* Header styling */
@@ -76,12 +112,18 @@
   <p>This is a game which I made with my friend. We really hope you enjoy it.  I am really glad that i made this game
     it has gamepasses different gun skins and knifes coming soon. Frequent updates , new maps , new perks , new guns and knifes
     Click the link below to go to the Roblox page..</p>
-
-  <img src="/Users/jj/Documents/Website/Screenshot 2026-01-13 at 9.20.17 PM.png" alt="Pew Pew Oof gameplay screenshot">
-  <img src="/Users/jj/Documents/Website/Screenshot 2026-01-13 at 9.19.42 PM.png" alt="Pew Pew Oof gameplay screenshot">
-
-  <a href="https://www.roblox.com/share?code=db0d0be7862a3841b0e425aca791160b&type=ExperienceDetails&stamp=1768317985318">
+ <a href="https://www.roblox.com/share?code=db0d0be7862a3841b0e425aca791160b&type=ExperienceDetails&stamp=1768317985318">
     Join Now
-  </a>
+
+  <img src="/Users/jj/Documents/Website/screenshot.jpg" alt="Pew Pew Oof gameplay screenshot">
+
+  <p>This image shows in-game action from Pew Pew Oof, including fast-paced combat and unique weapons. More features,
+    maps, and gameplay improvements are being added regularly.</p>
+
+  <img src="/Users/jj/Documents/Website/gameplay.jpg" alt="Pew Pew Oof gameplay screenshot">
+
+  <a href="/Users/jj/Documents/Website/gallery.pewpewoof.pages">
+    Image gallery </a>
+  
 </body>
 </html>
